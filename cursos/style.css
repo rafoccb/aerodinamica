@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+    
+:root {
+  
+    font-size: 62.5%; 
+  
+    --nav-height: 7.2rem;
+    --gutter: 20px;
+}
+  
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+  
+  
+    overflow: overlay;
+}
+
+input,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+ul {
+    list-style: none;
+  }
+
+header {
+    width: 100%;
+    padding: 15px 30px;
+    position: fixed;
+    z-index: 300;
+    background-color: #FFF;
+}
+
+.page__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page__top button {
+    border-radius: 50%;
+    background-color: #FF9B26;
+    padding: 0.6rem 0.8rem;
+    transition: 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+
+}
+
+.page__top button:hover{
+    background-color: #F96918;
+}
+
+.page__top button span {
+    color: #fff;
+    font-size: 3rem;
+    margin-top: 0.4rem;
+}
+.page__top img {
+    width: 100%;
+    max-width: 120px;
+}
+
+.home {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.home__background {
+	width: 100%;
+
+	height: 350px;
+	background: linear-gradient(90deg, #F96918 54.24%, #F1184C 100%);
+
+	position: absolute;
+}
+
+.home__image {
+	width: 80%;
+	height: 310px;
+
+	position: relative;
+	top: 12rem;
+	left: 3.2rem;
+}
+
+.home__image img {
+	width: 100%;
+	height: 310px;
+	object-fit: cover;
+}
+
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #F96918;
+	z-index: 100;
+	opacity: 0.3;
+}
+
+.home__us {
+	position: relative;
+	z-index: 200;
+
+	text-align: end;
+	padding: 3.2rem;
+}
+
+.home__us h2 {
+    font-weight: bold;
+}
+
+.home__us p {
+	margin-top: 2rem;
+	color: #8F9491;
+}
+
+.home__actions {
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-end;
+
+	margin-top: 30px;
+}
+
+.home__actions > a {
+	text-decoration: none;
+	padding: 2rem 3.2rem;
+	background-color: #F1184C;
+	color: #FFF;
+
+	border-radius: 1.2rem;
+	font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #F96918;
+    z-index: 100;
+    opacity: 0.2;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
+.social-media-footer {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 3.2rem;
+}
+
+/* ----------- CURSOS ------------- */
+.classes {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	text-align: start;
+}
+
+.classes__description {
+	padding: 0 3.2rem;
+	margin-bottom: 2rem;
+}
+
+.classes h1 span {
+	color: #F1184C;
+}
+
+.classes p {
+	color: #8F9491;
+}
+
+.classes__cards {
+  width: 100%;
+  /* display: flex; */
+
+  display: grid;
+  grid-template-columns: 0px repeat(4, calc(80% - var(--gutter) * 2)) 0px;
+  grid-template-rows: minmax(350px, 1fr);
+  
+	overflow-x: scroll;
+  /* 
+  scroll-snap-type: x proximity; */
+
+	scroll-behavior: smooth;
+
+	/* hiding scroll */
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+.testimonial__text::-webkit-scrollbar { 
+	display: none;  /* Safari and Chrome */
+}
+
+
+@media(min-width:512px) {
+  .classes__cards {
+    grid-template-columns: 0px repeat(4, calc(60% - var(--gutter) * 2)) 0px;
+  }
+}
+
+@media(min-width:728px) {
+  .classes__cards {
+    grid-template-columns: 0px repeat(4, calc(40% - var(--gutter) * 2)) 0px;
+  }
+}
+
+.classes__cards:before {
+  content: '';
+}
+
+.card {
+	width: 100%;
+	position: relative;
+	height: 450px;
+
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card img {
+	width: 100%;
+	object-fit: cover;
+	height: 450px;
+}
+
+.card__info {
+	position: absolute;
+	z-index: 200;
+	width: 100%;
+	bottom: 15px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.card__info p {
+	color: #fff;
+	text-align: center;
+	font-weight: thin;
+
+	margin-bottom: 1.4rem;
+}
+
+.card__info  a {
+	width: 80%;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	
+	font-weight: bold;
+	color: #fff;
+	background-color: #F96918;
+	border-radius: 12px;
+	padding: 1.4rem;
+
+  transition: .2s ease-out;
+}
+
+.card__info  a:hover {
+  background-color: #F1184C;
+}
+
+/* ------- graduacao ----------- */
+.graduation {
+  width: 100%;
+
+}
+
+.graduation__background {
+  width: 100%;
+
+  height: 280px;
+	background: linear-gradient(90deg, #F96918 54.24%, #F1184C 100%);
+
+  position: absolute
+}
+
+.graduation__info {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 99;
+
+  padding: 3.2rem;
+}
+
+.graduation__info h1 {
+  color: #FFF;
+}
+
+.graduation__info h1 span {
+  color: #000;
+}
+
+.graduation__info img {
+  width: 100%;
+  max-width: 180px;
+
+  margin-top: 2rem;
+}
+
+.graduation__cards {
+  width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+
+  margin-top: 3.2rem;
+  padding: 0 3.2rem;
+}
+
+.graduation__card {
+  width: 100%;
+	max-width: 100%;
+	position: relative;
+	height: 250px;
+
+  margin-top: 1.6rem;
+}
+
+.graduation__card img {
+  width: 100%;
+	object-fit: cover;
+	height: 250px;
+}
+
+.graduation__card__info {
+  position: absolute;
+	width: 100%;
+	bottom: 15px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  z-index: 99;
+}
+
+.graduation__card__info p {
+  color: #FFF;
+  text-align: center;
+  font-weight: thin;
+}
+
+/* -----------FOOTER------------- */
+
+.footer {
+	width: 100%;
+	padding: 0 3.2rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	margin: 8rem 0;
+}
+
+.footer__images {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer__logo {
+	width: 110px;
+	height: 35px;
+}
+
+.footer__anac {
+	width: 100%;
+	max-width: 400px;
+	filter: grayscale(100%);
+	filter: contrast(0);
+
+	margin-top: 3.2rem;
+}
+
+.footer__contact {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.address, .schedules, .contacts {
+	margin-top: 3.2rem;
+}
+
+.footer__contact h2 span {
+	color: #F1184C;
+}
+
+.footer__contact p, a {
+	color: #8F9491;
+
+	text-decoration: none;
+}
+
+.our__coordinates, .our__social {
+	margin-top: 1.6rem;
+}
+
+.footer__social {
+	margin-top: 1.6rem;
+}
+
+.copyright {
+	font-size: 1.2rem;
+	margin-top: 4.8rem;
+
+}
+
+/* ----------BACK TO TOP------------- */
+
+
+#backToTopButton circle{
+	fill: #F1184C;
+	transition: 0.5s ease-in-out;
+}
+
+#backToTopButton {
+  position: fixed;
+  z-index: 899;
+  bottom: 2rem;
+  right: 2.5rem;
+  transform: translateY(150%);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms;
+}
+
+#backToTopButton:hover circle {
+  fill: #CC0937;
+}
+
+#backToTopButton.show {
+  transform: translateY(0%);
+
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 728px) {
+	.footer__images {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.footer__anac {
+		margin-top: 0;
+	}
+
+	.footer__contact {
+		flex-direction: row;
+
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: 1024px) {
+	body {
+		overflow: auto;
+	}
+	.home {
+		flex-direction: row;
+		
+	}
+	
+	.home__image {
+		width: 100%;
+		max-width: 840px;
+		height: 360px;
+	
+		top: 9.6rem;
+		left: 8rem;
+	}
+	
+	.home__image img {
+		height: 360px;
+	}
+	
+	.home__us {
+		position: relative;
+		top: 110px;
+		right: 60px;
+	
+		width: 100%;
+		max-width: 560px;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+	
+	.home__us h2 {
+		color: #fff;
+	
+		text-align: end;
+	}
+	
+	
+	.home__us p {
+		margin-top: 2.4rem;
+		color: #fff;
+	}
+	
+	.home__actions {
+		justify-content: flex-end;
+		margin-top: 3.2rem;
+	}
+	
+	.social-media {
+		margin-left: 1.6rem;
+	}
+
+	.classes {
+		margin-top: 16rem;
+	}
+
+	.classes__cards {
+		width: 100%;
+		max-width: 1528px;
+		/* display: flex; */
+	  
+		display: grid;
+		grid-template-columns: 0px repeat(4, 1fr);
+		grid-template-rows: minmax(350px, 1fr);
+		
+		overflow-x: hidden; 
+	}
+	
+	.graduation__info{
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	.graduation__info img {
+		margin-top: 0rem;
+	}
+	
+	.graduation__cards {
+		flex-wrap: initial;
+		gap: 2.4rem;
+	}
+}
