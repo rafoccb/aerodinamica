@@ -469,6 +469,7 @@ header {
 
 .address, .schedules, .contacts {
 	margin-top: 3.2rem;
+    width: 100%
 }
 
 .footer__contact h2 span {
@@ -492,7 +493,7 @@ header {
 .copyright {
 	font-size: 1.2rem;
 	margin-top: 4.8rem;
-
+    text-align: center;
 }
 
 /* ----------BACK TO TOP------------- */

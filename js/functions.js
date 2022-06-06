@@ -110,5 +110,3 @@ buttons.forEach(button => {
   	})
 })
 
-
-

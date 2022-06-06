@@ -164,13 +164,15 @@ body.menu-expanded .menu {
 .menu ul:nth-child(1) {
   display: flex;
   flex-direction: column;
-  gap: 4.8rem;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
 
-  margin-top: 6rem;
+  margin-top: 4rem;
 
   font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 3.1rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
 }
 
 .menu > ul {
@@ -700,6 +702,7 @@ body.menu-expanded button path {
 .btns {
 	width: 100%;
 	margin-top: 16px;
+	display: flex;
 }
 
 .slider__btn {
@@ -712,11 +715,14 @@ body.menu-expanded button path {
 	width: 48px;
 	cursor: pointer;
 	transition: 0.3s ease-in-out;
+	display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .slider__btn span {
 	font-size: 3.2rem;
-	margin-top: 8px;
+	/* margin-top: 5px; */
 }
 
 .slider__btn:hover {
@@ -756,7 +762,7 @@ body.menu-expanded button path {
 	max-width: 360px;
 	/* min-height: 400px;
 	max-height: 450px; */
-  height: 80%;
+  	height: 80%;
 	padding: 3rem 4rem;
 	position: relative;
 	background-color: #F8F8F8;
@@ -809,7 +815,7 @@ body.menu-expanded button path {
   
 .testimonial__quote {
   position: absolute;
-  top: -25px;
+  top: -35px;
   right: 15px;
 }
   
@@ -901,6 +907,7 @@ body.menu-expanded button path {
 
 .address, .schedules, .contacts {
 	margin-top: 3.2rem;
+	width: 100%;
 }
 
 .footer__contact h2 span {
@@ -924,7 +931,7 @@ body.menu-expanded button path {
 .copyright {
 	font-size: 1.2rem;
 	margin-top: 4.8rem;
-
+	text-align: center;
 }
 
 

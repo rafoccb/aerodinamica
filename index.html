@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
 	
   <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
 
@@ -120,7 +121,7 @@
 			<h2> Somos especializados em formar novos pilotos a nível regional e nacional </h2>
 			<p> Venha realizar o seu sonho de ser <br> piloto com a gente. </p>
 			<div class="home__actions">
-				<a href="./sobre-nos.html"> Sobre nós </a>
+				<a href="./sobre-nos/index.html"> Sobre nós </a>
 
 				<ul class="social-media">
 					<!-- Facebook -->
@@ -662,7 +663,7 @@
         * FOR SOME REASON - is working only here *
         */
 
-        const slider = function () {
+       	function slider() {
         const slides = document.querySelectorAll('.slide__testimonial');
         const btnLeft = document.querySelector('.slider__btn--left');
         const btnRight = document.querySelector('.slider__btn--right');
@@ -677,7 +678,7 @@
         };
 
         // Next slide
-        const nextSlide = function () {
+    	function nextSlide() {
             if (curSlide === maxSlide - 1) {
             curSlide = 0;
             } else {
@@ -687,7 +688,7 @@
             goToSlide(curSlide);
         };
 
-        const prevSlide = function () {
+        function prevSlide() {
             if (curSlide === 0) {
             curSlide = maxSlide - 1;
             } else {
@@ -705,6 +706,10 @@
         btnRight.addEventListener('click', nextSlide);
         btnLeft.addEventListener('click', prevSlide);
 
+		// Event handlers for swiping
+		window.addEventListener("swiped-left", nextSlide, {once: true})
+		window.addEventListener("swiped=right", prevSlide, {once: true})
+
         document.addEventListener('keydown', function (e) {
             if (e.key === 'ArrowLeft') prevSlide();
             e.key === 'ArrowRight' && nextSlide();
@@ -717,6 +722,7 @@
 	<!-- ScrollReveal Lib -->
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="./js/functions.js"></script>
+	<script src="./js/swiped-events.min.js"></script>
 
     
 </body>
