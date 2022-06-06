@@ -706,9 +706,9 @@
         btnRight.addEventListener('click', nextSlide);
         btnLeft.addEventListener('click', prevSlide);
 
-		// Event handlers for swiping
-		window.addEventListener("swiped-left", nextSlide, {once: true})
-		window.addEventListener("swiped=right", prevSlide, {once: true})
+	// Event handlers for swiping
+	window.addEventListener("swiped-left", nextSlide, {once: true});
+	window.addEventListener("swiped-right", prevSlide, {once: true});
 
         document.addEventListener('keydown', function (e) {
             if (e.key === 'ArrowLeft') prevSlide();
